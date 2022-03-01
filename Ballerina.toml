@@ -1,0 +1,16 @@
+[package]
+org = "ballerinax"
+name = "cdata.connect.driver"
+version = "1.0.0"
+authors = ["Ballerina"]
+keywords = ["IT Operations/Cloud Services", "Cost/Free"]
+repository = "https://github.com/ballerina-platform/ballerinax-cdata-connectors"
+icon = "icon.png"
+license = ["Apache-2.0"]
+distribution = "2201.0.0"
+
+[build-options]
+observabilityIncluded = true
+
+[[platform.java11.dependency]]
+path = "./lib/cdata.connect.driver.jar"
