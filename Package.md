@@ -1,14 +1,14 @@
-Connects to [CData Connect Cloud JDBC Driver](https://cloud.cdata.com/docs/JDBC.html) from Ballerina
+Connects to [CData Connect JDBC Driver](https://cloud.cdata.com/docs/JDBC.html) from Ballerina
 
 ## Package overview
-The `ballerinax/cdata.connect.driver` is a [Ballerina](https://ballerina.io/) library for CData Connect Cloud JDBC Driver.
-This package bundles the latest CData Connect Cloud JDBC Driver.
+The `ballerinax/cdata.connect.driver` is a [Ballerina](https://ballerina.io/) library for CData Connect JDBC Driver.
+This package bundles the latest CData Connect JDBC Driver.
 
 ## Compatibility
 |                                   | Version                         |
 |-----------------------------------|---------------------------------|
 | Ballerina Language                | Ballerina Swan Lake 2201.0.0    | 
-| CData Connect Cloud JDBC Driver   |                                 |
+| CData Connect JDBC Driver         |                                 |
 
 ## Report issues
 To report bugs, request new features, start new discussions, view project boards, etc., go to the [Ballerina Extended Library repository](https://github.com/ballerina-platform/ballerina-extended-library)

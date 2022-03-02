@@ -1,26 +1,41 @@
 ## Overview
-The [Ballerina](https://ballerina.io/) driver library for [CData Connect Cloud JDBC Driver](https://cloud.cdata.com/docs/JDBC.html) allows you to programmatically access all of the cloud applications, databases, APIs, and services across an organization. 
+The [Ballerina](https://ballerina.io/) driver library for [CData Connect JDBC Driver](https://cloud.cdata.com/docs/JDBC.html) allows you to programmatically access all of the CData Connect applications, databases, APIs, and services across an organization. 
 For detailed information on working with each data source, see [Data Sources](https://cloud.cdata.com/docs/Data-Sources.html).
-CData Connect Cloud supports a wide range of standard DDL commands, SQL commands, and SQL functions to query data sources. 
-For reference information on all the CData Connect Cloud SQL commands (i.e., DDL, DML, and query syntax), see the [SQL Reference](https://cloud.cdata.com/docs/SQL-Reference.html).
+CData Connect supports a wide range of standard DDL commands, SQL commands, and SQL functions to query data sources. 
+For reference information on all the CData Connect SQL commands (i.e., DDL, DML, and query syntax), see the [SQL Reference](https://cloud.cdata.com/docs/SQL-Reference.html).
 
 ## Prerequisites
 
 Before using this driver library in your Ballerina application, complete the following:
 
+### To connect to CData Connect Cloud
+
 * Create a [CData Connect Cloud](https://cloud.cdata.com) account.
-* Obtain the CData cloud `username` and `password` from the CData Cloud dashboard. 
+* Obtain the CData Connect Cloud `username` and `password` from the CData Connect Cloud dashboard. 
     * `<username>` is the email address of the user. For example `user@cdata.com`.
-    * `<password>` is a personal access token (PAT) that you generate from the **User Profile** page. For instructions on how to create a PAT to authenticate, see [Personal Access Tokens](https://cloud.cdata.com/docs/User-Profile.html#personal-access-tokens). The Ballerina library for CData Connect Cloud JDBC driver uses Basic AuthSchema by default to connect.
+    * `<password>` is a personal access token (PAT) that you generate from the **User Profile** page. For instructions on how to create a PAT to authenticate, see [Personal Access Tokens](https://cloud.cdata.com/docs/User-Profile.html#personal-access-tokens). The Ballerina connector for CData Connect Cloud uses Basic AuthSchema by default to connect.
 * Make sure to go to the [Connections](https://cloud.cdata.com/docs/Connections.html) tab 
-in the CData Cloud dashboard and set up any connection you need to work with the data sources. 
+in the CData Connect Cloud dashboard and set up any connection you need to work with the data sources. 
+You can use the **Connections** tab to configure a data source that contains the data you want to work with. 
+For more information on working with each data source, see [Data Sources](https://cloud.cdata.com/docs/Data-Sources.html).
+Use the **Connection Name** and **Data Source Name** to write your SQL queries.
+
+### To connect to CData Connect Server
+
+* Run the CData Connect Server.
+* Obtain the CData Connect Server `username` and `password`.
+    * `<username>` is the username you use to login to CData Cloud Connect Server.
+    * `<password>` is the password you use to login to CData Cloud Connect Server.
+* Obtain the `<hostname>` and `<port>` where your CData Connect Server is up and running.
+* You need to specify the `<url>` as `jdbc:cdata:connect:URL=http://<hostname>:<port>/rest.rsc;`.
+* Make sure to go to the `Connections` tab in the CData Connect Server dashboard and set up any connection you need to work with the data sources. 
 You can use the **Connections** tab to configure a data source that contains the data you want to work with. 
 For more information on working with each data source, see [Data Sources](https://cloud.cdata.com/docs/Data-Sources.html).
 Use the **Connection Name** and **Data Source Name** to write your SQL queries.
  
 ## Quickstart
 
-To use the CData Connect Cloud driver library in your Ballerina application, update the .bal file as follows:
+To use the CData Connect driver library in your Ballerina application, update the .bal file as follows:
 
 ### Step 1: Import connector and driver
 First, import the following modules into the Ballerina project.
@@ -35,6 +50,9 @@ Provide the `<username>`, `<password>` to initialize the Cdata Connect client co
 Depending on your requirement, you can also pass optional properties and connection pool configurations during the client connector initialization. 
 For more information on connection string properties, see [Connection String Options](https://cdn.cdata.com/help/LHG/jdbc/Connection.htm).
 
+If you want to connect to CData Connect Cloud, you don't need to specify the `url`. 
+The default value will be `jdbc:cdata:connect:AuthScheme=Basic`. It uses Basic AuthSchema by default to connect.
+
 `<username>` is the email address of the user. For example `user@cdata.com`.
 `<password>` is a personal access token (PAT) that you generate from the **User Profile** page.
 
@@ -44,10 +62,24 @@ string password = "<password>";
 
 cdata:Client cdataClient = check new (user, password);
 ```
-You can also define `<username>` and `<password>` as configurable strings in your Ballerina program.
+
+If you want to connect to CData Connect Server, you need to specify the `url` as `jdbc:cdata:connect:URL=http://<hostname>:<port>/rest.rsc;`.
+Replace the `<hostname>` and `<port>` with the information where your CData Cloud Connect Server is up and running.
+`<username>` is the username you use to login to CData Cloud Connect Server.
+`<password>` is the password you use to login to CData Cloud Connect Server.
+
+```ballerina
+string user = "<username>";
+string password = "<password>";
+string url = "jdbc:cdata:connect:URL=http://<hostname>:<port>/rest.rsc;";
+
+cdata:Client cdataClient = check new (user, password, url);
+```
+
+You can also define `<username>`, `<password>` and `<url>` as configurable strings in your Ballerina program.
 
 ### Step 3: Invoke the connector operation
-1. Use the Ballerina CData Connect client connector to consume the CData Connect Cloud API. For more information on working with each data source, see [Data Sources](https://cloud.cdata.com/docs/Data-Sources.html). When you write SQL queries, be sure to specify the **Connection Name** and **Data Source Name** in the [Connections](https://cloud.cdata.com/docs/Connections.html) tab of the CData Cloud dashboard.
+1. Use the Ballerina CData Connect client connector to consume the CData Connect API. For more information on working with each data source, see [Data Sources](https://cloud.cdata.com/docs/Data-Sources.html). When you write SQL queries, be sure to specify the **Connection Name** and **Data Source Name** in the [Connections](https://cloud.cdata.com/docs/Connections.html) tab of the CData Cloud dashboard or in the CData Connect Server.
 
     Now let’s take a look at a few sample operations.
 

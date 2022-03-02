@@ -1,13 +1,13 @@
-Ballerina CData Connect Cloud Driver Library
+Ballerina CData Connect Driver Library
 ===================
 
 [![Build](https://github.com/ballerina-platform/module-ballerinax-cdata.connect.driver/workflows/CI/badge.svg)](https://github.com/ballerina-platform/module-ballerinax-cdata.connect.driver/actions?query=workflow%3ACI)
 [![GitHub Last Commit](https://img.shields.io/github/last-commit/ballerina-platform/module-ballerinax-cdata.connect.driver.svg)](https://github.com/ballerina-platform/module-ballerinax-cdata.connect.driver/commits/master)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
-[CData Connect Cloud](https://cloud.cdata.com) is a consolidated connectivity platform that links applications to a broad ecosystem of real-time data sources through consistent, standards-compliant interfaces. CData Connect Cloud provides tools to seamlessly access data from any system, anywhere.
+[CData Connect](https://www.cdata.com/connect) is a consolidated connectivity platform that links applications, on-premises or in the cloud to a broad ecosystem of real-time data sources through consistent, standards-compliant interfaces. CData Connect Cloud provides tools to seamlessly access data from any system, anywhere.
 
-The CData Connect Cloud [Ballerina](https://ballerina.io/) driver library bundles the latest [CData Connect Cloud JDBC driver](https://cloud.cdata.com/docs/JDBC.html) through Ballerina. With this library, you can programmatically access all of the CData Connect Cloud applications, databases, APIs, services and query these data.
+The CData Connect [Ballerina](https://ballerina.io/) driver library bundles the latest [CData Connect JDBC driver](https://cloud.cdata.com/docs/JDBC.html) through Ballerina. With this library, you can programmatically access all of the CData Connect applications, databases, APIs, services and query these data.
 
 For more information, go to the module(s).
 - [cdata.connect.driver](Module.md)
