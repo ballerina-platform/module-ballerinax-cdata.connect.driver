@@ -52,6 +52,6 @@ jobs:
                 --data "{
                   \"event_type\": \"notify-build-failure\",
                   \"client_payload\": {
-                    \"repoName\": \"module-ballerinax-snowflake.driver\"
+                    \"repoName\": \"module-ballerinax-cdata.connect.driver\"
                   }
                 }"
