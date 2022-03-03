@@ -7,8 +7,8 @@ This package bundles the latest CData Connect JDBC Driver.
 ## Compatibility
 |                                   | Version                         |
 |-----------------------------------|---------------------------------|
-| Ballerina Language                | Ballerina Swan Lake 2201.0.0    | 
-| CData Connect JDBC Driver         |                                 |
+| Ballerina Language                | Ballerina Swan Lake 2201.0.1    | 
+| CData Connect JDBC Driver         | Latest                          |
 
 ## Report issues
 To report bugs, request new features, start new discussions, view project boards, etc., go to the [Ballerina Extended Library repository](https://github.com/ballerina-platform/ballerina-extended-library)
