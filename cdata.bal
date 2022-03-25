@@ -18,8 +18,3 @@
 // We need to add at least one .bal file to build the module.
 
 import ballerina/jballerina.java as _;
-
-@display {label: "CData Connect Driver", iconPath: "icon.png"}
-public isolated client class Client {
-
-}
