@@ -7,7 +7,7 @@ keywords = ["IT Operations/Cloud Services", "Cost/Paid"]
 repository = "https://github.com/ballerina-platform/module-ballerinax-cdata.connect.driver"
 icon = "icon.png"
 license = ["Apache-2.0"]
-distribution = "2201.2.1"
+distribution = "2201.3.0"
 
 [build-options]
 observabilityIncluded = true
