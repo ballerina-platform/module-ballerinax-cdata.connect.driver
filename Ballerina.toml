@@ -1,13 +1,13 @@
 [package]
 org = "ballerinax"
 name = "cdata.connect.driver"
-version = "1.1.0"
+version = "1.1.1"
 authors = ["Ballerina"]
 keywords = ["IT Operations/Cloud Services", "Cost/Paid"]
 repository = "https://github.com/ballerina-platform/module-ballerinax-cdata.connect.driver"
 icon = "icon.png"
 license = ["Apache-2.0"]
-distribution = "2201.2.1"
+distribution = "2201.2.3"
 
 [build-options]
 observabilityIncluded = true
